@@ -1,0 +1,12 @@
+models:
+  - name: int_sales__sales_reason
+    description: Lookup table of customer purchase reasons.
+    columns:
+      - name: pk_sales_order
+        description: Primary key for sales reason records.
+        tests:
+          - unique
+          - not_null
+
+      - name: reason_name
+        description: Names of sales reasons grouped by order.

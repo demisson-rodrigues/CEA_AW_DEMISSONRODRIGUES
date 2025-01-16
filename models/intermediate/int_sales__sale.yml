@@ -1,0 +1,71 @@
+models:
+  - name: int_sales__sale
+    description: Table with sales order information. With joining information from the [SalesOrderHeader] and [SalesOrderDetail] tables.
+    columns:
+      - name: pk_sales_order_detail
+        description: Primary key for sales records.
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_sales_order
+        description: Foreign key reference of dimension table of [SalesReason].
+        tests:
+          - not_null
+
+      - name: fk_customer
+        description: Foreign key reference of dimension table of [Customer].
+        tests:
+          - not_null
+
+      - name: fk_product
+        description: Foreign key reference of dimension table of [Product].
+        tests:
+          - not_null
+
+      - name: fk_ship_to_address
+        description: Foreign key reference of dimension table of [Location].
+        tests:
+          - not_null
+
+      - name: fk_credit_card
+        description: Foreign key reference of dimension table of [CreditCard].
+
+      - name: order_qty
+        description: 	Quantity ordered per product. Information extracted from the [SalesOrderDetail] table.
+
+      - name: unit_price
+        description: 	Selling price of a single product. Information extracted from the [SalesOrderDetail] table.
+
+      - name: unit_price_discount
+        description: 	Discount amount. Information extracted from the [SalesOrderDetail] table.
+
+      - name: line_total
+        description: 	Per product subtotal. Computed as UnitPrice * (1 - UnitPriceDiscount) * OrderQty.
+
+      - name: order_date
+        description: 	Dates the sales order was created. Information extracted from the [SalesOrderHeader] table.
+
+      - name: due_date
+        description: 	Date the order is due to the customer. Information extracted from the [SalesOrderHeader] table.
+
+      - name: ship_date
+        description: 	Date the order was shipped to the customer. Information extracted from the [SalesOrderHeader] table.
+
+      - name: order_status
+        description: 	Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled. Information extracted from the [SalesOrderHeader] table.
+
+      - name: ordered_online
+        description: 	0 = Order placed by sales person. 1 = Order placed online by customer. Information extracted from the [SalesOrderHeader] table.
+
+      - name: subtotal
+        description: 	Sales subtotal. Computed as SUM(SalesOrderDetail.LineTotal) for the appropriate SalesOrderID. Information extracted from the [SalesOrderHeader] table.
+
+      - name: tax
+        description: 	Tax amount. Information extracted from the [SalesOrderHeader] table.
+
+      - name: freight
+        description: 	Shipping cost. Information extracted from the [SalesOrderHeader] table.
+
+      - name: total_due
+        description: 	Total due from customer. Computed as Subtotal + TaxAmt + Freight. Information extracted from the [SalesOrderHeader] table.      

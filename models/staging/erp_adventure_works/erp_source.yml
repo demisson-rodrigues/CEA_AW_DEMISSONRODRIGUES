@@ -4,12 +4,12 @@ sources:
     schema: raw_adventure_works
     database: fea24_11
     tables:
-      - name: category
-        columns:
-          - name: id
-            data_tests:
-              - unique
-              - not_null
+      # - name: category
+      #   columns:
+      #     - name: id
+      #       data_tests:
+      #         - unique
+      #         - not_null
       - name: customer
       - name: store
       - name: salesperson
@@ -28,3 +28,5 @@ sources:
       - name: salesorderdetail
       - name: salesorderheadersalesreason
       - name: salesreason
+
+      - name: creditcard
