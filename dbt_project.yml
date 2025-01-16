@@ -40,6 +40,9 @@ models:
       +materialized: table
       +schema: marts
 
+    intermediate:
+      +schema: int
+
     staging:
       +schema: stg
       erp:

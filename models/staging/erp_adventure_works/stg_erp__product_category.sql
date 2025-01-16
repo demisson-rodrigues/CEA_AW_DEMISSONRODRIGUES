@@ -5,8 +5,8 @@ WITH
     )
     , source AS (
         SELECT
-            CAST(PRODUCTCATEGORYID AS int) AS pk_product_subcategory
-            , CAST(NAME AS varchar) AS product_category_name
+            CAST(PRODUCTCATEGORYID AS int) AS pk_product_category
+            , CAST(NAME AS varchar) AS category_name
         FROM
             product_category
     )

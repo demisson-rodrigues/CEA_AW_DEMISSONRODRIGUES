@@ -1,0 +1,27 @@
+models:
+  - name: int_sales__product
+    description: Table with products sold or used in the manfacturing of sold products. With joining information from the [ProductCategory] and [ProductSubcategory].
+    columns:
+      - name: pk_product
+        description: Primary key for product records
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: Name of the product.
+
+      - name: category_name
+        description: 	Category description. Information extracted from the [ProductCategory] table.
+
+      - name: subcategory_name
+        description: 	Subcategory description. Information extracted from the [ProductSubcategory] table.
+
+      - name: product_style
+        description: Target audience for which the product is recommended. W = Womens, M = Mens, U = Universal.
+
+      - name: list_price
+        description: 	Selling price.
+
+      - name: is_discontinued
+        description: 	If product was discontinued. Using the [DiscontinuedDate] column as a parameter, if it is filled in "true" or "false".

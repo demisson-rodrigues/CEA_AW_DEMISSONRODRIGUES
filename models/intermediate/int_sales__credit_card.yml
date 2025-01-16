@@ -1,0 +1,13 @@
+models:
+  - name: int_sales__credit_card
+    description: Table with customer credit card information
+    columns:
+      - name: pk_credit_card
+        description: Primary key for credit card records
+        tests:
+          - unique
+          - not_null
+          
+      - name: card_type
+        description: Credit card name
+              

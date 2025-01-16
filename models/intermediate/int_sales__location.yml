@@ -1,0 +1,18 @@
+models:
+  - name: int_sales__location
+    description: Table with location information. With joining of the [Address], [StateProvince] and [CountryRegion] tables.
+    columns:
+        - name: pk_location
+          description: Primary key for location records
+          tests:
+            - unique
+            - not_null
+
+        - name: city_name
+          description: Name of the city. Information extracted from the [Address] table.
+
+        - name: state_name
+          description: 	State or province description. Information extracted from the [StateProvince] table.
+
+        - name: country_name
+          description: 	Country or region name. Information extracted from the [CountryRegion] table.

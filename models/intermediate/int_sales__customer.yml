@@ -1,0 +1,27 @@
+models:
+  - name: int_sales__customer
+    description: Table with customer information. With joining information from the [Person], [Store] and [SalesTerritory] tables.
+    columns:
+      - name: pk_customer
+        description: Primary key for customer records
+        tests:
+          - unique
+          - not_null
+
+      - name: person_name
+        description: Full name of person. Joining the columns [First Name], [Middle Name] (when applicable) and [Last Name]. Information extracted from the [Person] table.
+
+      - name: store_name
+        description: Name of the store. Information extracted from the [Store] table.
+
+      - name: territory_name
+        description: 	Sales territory description. Information extracted from the [SalesTerritory] table.
+
+      - name: first_order_date
+        description: Date of first order by [Customer].
+
+      - name: last_order_date
+        description: Date of last order by [Customer].
+
+      - name: total_order
+        description: Total orders by [Customer].

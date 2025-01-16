@@ -32,6 +32,10 @@ WITH
             END AS product_style
             , CAST(SELLSTARTDATE AS date) AS sell_start_date
             , CAST(SELLENDDATE AS date) AS sell_end_date
+            , CASE
+                WHEN SELLENDDATE IS NOT NULL THEN TRUE
+                ELSE FALSE
+            END AS is_discontinued
             --, CAST(DISCONTINUEDDATE AS date) AS discontinued_date
         FROM
             product

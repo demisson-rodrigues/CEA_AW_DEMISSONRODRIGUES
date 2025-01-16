@@ -11,6 +11,7 @@ WITH
             , CAST(TERRITORYID AS int) AS fk_territory
             , CAST(SALESPERSONID AS int) AS fk_sales_person
             , CAST(SHIPTOADDRESSID AS int) AS fk_ship_to_address
+            , CAST(CREDITCARDID AS int) AS fk_credit_card
             , CAST(ORDERDATE AS date) AS order_date
             , CAST(DUEDATE AS date) AS due_date
             , CAST(SHIPDATE AS date) AS ship_date
@@ -31,6 +32,7 @@ WITH
             , CAST(TAXAMT AS numeric(18,4)) AS tax
             , CAST(FREIGHT AS numeric(18,4)) AS freight
             , CAST(TOTALDUE AS numeric(18,4)) AS total_due
+            , CAST(MODIFIEDDATE AS date) AS modified_date
         FROM sales_order_header
     )
 
