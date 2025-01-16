@@ -19,4 +19,4 @@ SELECT
 FROM
     sales_2011
 WHERE
-    sum_total_sales NOTBETWEEN '12646112.00' AND '12646113.00'
+    sum_total_sales NOT BETWEEN '12646112.00' AND '12646113.00'
